@@ -1,0 +1,411 @@
+import { Metadata } from 'next';
+import Link from 'next/link';
+import {
+  ArrowRight,
+  ArrowDown,
+  Search,
+  Palette,
+  Code2,
+  BookOpen,
+  Wrench,
+  Users2,
+  Lightbulb,
+} from 'lucide-react';
+import { CommunityInvitationBanner } from '@/components/common/CommunityInvitationBanner';
+
+export const metadata: Metadata = {
+  title: 'Programs & Overview | GDGoC UGM',
+  description:
+    'Explore GDGoC UGM learning tracks, compare outcomes, discover hands-on formats, and follow the 4-step community learning journey.',
+};
+
+export default function OverviewPage() {
+  const tracks = [
+    {
+      id: 'research-discovery',
+      badge: 'EXPLORE THE WHY',
+      badgeClass: 'bg-blue-50 text-google-blue border-blue-200',
+      title: 'Research & discovery',
+      description:
+        'Ask better questions, understand people, and turn insight into a clear problem worth solving.',
+      topics: 'Problem framing · User research · Product thinking',
+      icon: Search,
+      iconBg: 'bg-blue-500/10 text-google-blue',
+    },
+    {
+      id: 'design-creativity',
+      badge: 'MAKE IT MEANINGFUL',
+      badgeClass: 'bg-amber-50 text-amber-700 border-amber-200',
+      title: 'Design & creativity',
+      description:
+        'Translate ideas into thoughtful experiences, from a first sketch to a prototype people can use.',
+      topics: 'UI/UX · Visual storytelling · Prototyping',
+      icon: Palette,
+      iconBg: 'bg-amber-500/10 text-amber-600',
+    },
+    {
+      id: 'development',
+      badge: 'BRING IDEAS TO LIFE',
+      badgeClass: 'bg-emerald-50 text-google-green border-emerald-200',
+      title: 'Development',
+      description:
+        'Learn the tools, write the code, and build useful things with people who enjoy figuring it out.',
+      topics: 'Web & mobile · Cloud · AI foundations',
+      icon: Code2,
+      iconBg: 'bg-emerald-500/10 text-google-green',
+    },
+  ];
+
+  const comparisonRows = [
+    {
+      pathway: 'Research & discovery',
+      practice: 'Listening, problem framing, and testing assumptions',
+      outcome: 'A research insight and a focused problem brief',
+    },
+    {
+      pathway: 'Design & creativity',
+      practice: 'Ideation, user flows, and prototype feedback',
+      outcome: 'An interactive prototype and a design story',
+    },
+    {
+      pathway: 'Development',
+      practice: 'Coding, testing, and connecting tools',
+      outcome: 'A working demo with a clear explanation',
+    },
+  ];
+
+  const formats = [
+    {
+      title: 'Study groups',
+      desc: 'Build foundations with peers. Work through a topic, compare approaches, and make space for questions.',
+      tag: 'Best for · Learning the fundamentals',
+      icon: BookOpen,
+      iconBg: 'bg-blue-500/10 text-google-blue',
+    },
+    {
+      title: 'Hands-on workshops',
+      desc: 'Get introduced to a tool or method, follow a practical exercise, and take away something to keep exploring.',
+      tag: 'Best for · Trying something new',
+      icon: Wrench,
+      iconBg: 'bg-emerald-500/10 text-google-green',
+    },
+    {
+      title: 'Project circles',
+      desc: 'Connect research, design, and development around a shared problem. Learn through making and feedback.',
+      tag: 'Best for · Putting skills into practice',
+      icon: Users2,
+      iconBg: 'bg-amber-500/10 text-amber-600',
+    },
+    {
+      title: 'Knowledge sharing',
+      desc: 'Walk through an idea, share a lesson from your process, and discover how other students approach their work.',
+      tag: 'Best for · Exchanging perspectives',
+      icon: Lightbulb,
+      iconBg: 'bg-purple-500/10 text-purple-600',
+    },
+  ];
+
+  const journeySteps = [
+    {
+      num: '01',
+      title: 'Discover',
+      desc: 'Explore a topic and find the questions you want to answer.',
+    },
+    {
+      num: '02',
+      title: 'Practice',
+      desc: 'Try an exercise, walk through a challenge, and ask for help.',
+    },
+    {
+      num: '03',
+      title: 'Build',
+      desc: 'Apply your learning to a small idea with a clear purpose.',
+    },
+    {
+      num: '04',
+      title: 'Share',
+      desc: 'Show your process, gather feedback, and help someone else.',
+    },
+  ];
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      {/* 1. Hero Section */}
+      <section className="pt-8 pb-14 sm:pb-20 lg:pt-12 lg:pb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-500">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                <span>OVERVIEW · PROGRAMS & LEARNING TRACKS</span>
+              </div>
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold font-google text-neutral-900 tracking-tight leading-[1.08]">
+                Find your spark. <br />
+                <span className="text-primary">Build your own path.</span>
+              </h1>
+              <p className="text-base sm:text-lg text-neutral-600 leading-relaxed max-w-xl">
+                Explore how research, creativity, and development connect. Start with one interest. Grow through practice and the people around you.
+              </p>
+            </div>
+
+            {/* Right Artwork Graphic */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-sm aspect-square rounded-3xl bg-gradient-to-tr from-blue-100/60 via-amber-50/50 to-emerald-100/60 p-8 flex items-center justify-center border border-white/70 shadow-lg backdrop-blur-xs">
+                <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 border border-white shadow-card flex flex-col items-center justify-center gap-4 transform rotate-2 hover:rotate-0 transition-transform">
+                  <div className="w-20 h-20 rounded-2xl bg-blue-50 text-primary flex items-center justify-center shadow-xs">
+                    <Search className="w-10 h-10" />
+                  </div>
+                  <div className="space-y-1.5 w-32">
+                    <div className="h-2 w-full bg-neutral-200 rounded-full" />
+                    <div className="h-2 w-3/4 bg-neutral-200 rounded-full" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Sub-navigation quick jumps */}
+      <div className="sticky top-20 z-40 bg-white/95 backdrop-blur-md border-y border-neutral-200 py-3.5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-6 sm:gap-8 overflow-x-auto text-xs sm:text-sm font-medium text-neutral-600 no-scrollbar">
+            <a href="#tracks" className="hover:text-primary transition-colors flex items-center gap-1.5 whitespace-nowrap">
+              <span>Learning tracks</span>
+              <ArrowDown className="w-3.5 h-3.5" />
+            </a>
+            <a href="#matrix" className="hover:text-primary transition-colors flex items-center gap-1.5 whitespace-nowrap">
+              <span>Outcomes comparison</span>
+              <ArrowDown className="w-3.5 h-3.5" />
+            </a>
+            <a href="#formats" className="hover:text-primary transition-colors flex items-center gap-1.5 whitespace-nowrap">
+              <span>Learning formats</span>
+              <ArrowDown className="w-3.5 h-3.5" />
+            </a>
+            <a href="#journey" className="hover:text-primary transition-colors flex items-center gap-1.5 whitespace-nowrap">
+              <span>Your learning journey</span>
+              <ArrowDown className="w-3.5 h-3.5" />
+            </a>
+            <a href="#starting-point" className="hover:text-primary transition-colors flex items-center gap-1.5 whitespace-nowrap">
+              <span>Find a starting point</span>
+              <ArrowDown className="w-3.5 h-3.5" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* 3. Tracks Section */}
+      <section id="tracks" className="py-20 sm:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-3 mb-12">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-500">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              <span>EXPLORE YOUR INTERESTS</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-bold font-google text-neutral-900 tracking-tight leading-tight">
+              Three ways in. <br />
+              Plenty of ways forward.
+            </h2>
+            <p className="text-sm sm:text-base text-neutral-600 max-w-xl">
+              These pathways are starting points, not boxes. Follow one deeply or bring different skills together.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {tracks.map((t) => {
+              const Icon = t.icon;
+              return (
+                <div
+                  key={t.id}
+                  className="bg-white rounded-3xl p-7 border border-neutral-200/80 shadow-xs hover:shadow-hover transition-all flex flex-col justify-between group"
+                >
+                  <div>
+                    {/* Header Graphic */}
+                    <div className="w-full h-44 rounded-2xl bg-neutral-50 border border-neutral-100 flex items-center justify-center mb-6 relative overflow-hidden group-hover:bg-neutral-100/70 transition-colors">
+                      <div className={`w-16 h-16 rounded-2xl ${t.iconBg} flex items-center justify-center transform group-hover:scale-110 transition-transform`}>
+                        <Icon className="w-8 h-8" />
+                      </div>
+                    </div>
+
+                    <div className={`inline-block px-3 py-0.5 rounded-full text-[11px] font-semibold border ${t.badgeClass} mb-3 uppercase tracking-wider`}>
+                      {t.badge}
+                    </div>
+
+                    <h3 className="text-xl font-bold font-google text-neutral-900 mb-2.5">
+                      {t.title}
+                    </h3>
+
+                    <p className="text-neutral-600 text-sm leading-relaxed mb-6">
+                      {t.description}
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-neutral-100">
+                    <div className="text-xs text-neutral-500 font-medium mb-3">
+                      {t.topics}
+                    </div>
+                    <Link
+                      href={`/tracks/${t.id}`}
+                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-primary group-hover:text-primary-hover transition-colors"
+                    >
+                      <span>Explore this track</span>
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Comparison Table (Matrix) */}
+      <section id="matrix" className="py-20 sm:py-24 border-t border-neutral-200 bg-neutral-50/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-3 mb-12">
+            <h2 className="text-2xl sm:text-4xl font-bold font-google text-neutral-900 tracking-tight">
+              From an interest to something you can show.
+            </h2>
+          </div>
+
+          <div className="bg-white rounded-3xl border border-neutral-200/90 shadow-xs overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b border-neutral-200 bg-neutral-50/80 text-xs font-semibold uppercase tracking-wider text-neutral-500">
+                    <th className="py-4 px-6 sm:px-8 w-1/4">Pathway</th>
+                    <th className="py-4 px-6 sm:px-8 w-5/12">What you can practice</th>
+                    <th className="py-4 px-6 sm:px-8 w-5/12">A possible outcome</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-neutral-200 text-sm">
+                  {comparisonRows.map((r, idx) => (
+                    <tr key={idx} className="hover:bg-neutral-50/50 transition-colors">
+                      <td className="py-5 px-6 sm:px-8 font-bold font-google text-neutral-900">
+                        {r.pathway}
+                      </td>
+                      <td className="py-5 px-6 sm:px-8 text-neutral-600 leading-relaxed">
+                        {r.practice}
+                      </td>
+                      <td className="py-5 px-6 sm:px-8 text-neutral-600 leading-relaxed">
+                        {r.outcome}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="text-xs text-neutral-500 pt-4">
+            Illustrative learning outcomes. Topics and opportunities are shared through community updates.
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Ways to Learn (Formats) */}
+      <section id="formats" className="py-20 sm:py-28 border-t border-neutral-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-3 mb-12">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-500">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              <span>WAYS TO LEARN</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-bold font-google text-neutral-900 tracking-tight leading-tight">
+              The format changes. <br />
+              The curiosity stays.
+            </h2>
+            <p className="text-sm sm:text-base text-neutral-600 max-w-xl">
+              Explore the kinds of experiences that help you move from understanding to doing.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {formats.map((f, idx) => {
+              const Icon = f.icon;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white rounded-3xl p-7 border border-neutral-200/80 shadow-xs hover:shadow-card transition-all flex flex-col justify-between"
+                >
+                  <div className="space-y-4">
+                    <div className={`w-10 h-10 rounded-xl ${f.iconBg} flex items-center justify-center`}>
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-xl font-bold font-google text-neutral-900">
+                      {f.title}
+                    </h3>
+                    <p className="text-neutral-600 text-sm leading-relaxed">
+                      {f.desc}
+                    </p>
+                  </div>
+
+                  <div className="pt-6 border-t border-neutral-100 text-xs font-medium text-neutral-500">
+                    {f.tag}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Learning Journey Roadmap */}
+      <section id="journey" className="py-20 sm:py-28 border-t border-neutral-200 bg-neutral-50/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-3 mb-16">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-500">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              <span>PROGRESS, NOT PERFECTION</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-bold font-google text-neutral-900 tracking-tight leading-tight">
+              A journey you can keep building on.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {journeySteps.map((j, idx) => (
+              <div key={idx} className="space-y-3 border-l-2 border-primary/20 pl-6">
+                <div className="text-3xl sm:text-4xl font-extrabold font-google text-primary">
+                  {j.num}
+                </div>
+                <h3 className="text-lg font-bold font-google text-neutral-900">
+                  {j.title}
+                </h3>
+                <p className="text-neutral-600 text-sm leading-relaxed">
+                  {j.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. New to Tech? Banner */}
+      <div id="starting-point" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-10">
+        <div className="bg-[#fff7df] border border-amber-200/80 rounded-3xl p-8 sm:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+          <div className="space-y-2 max-w-xl">
+            <h3 className="text-2xl sm:text-3xl font-bold font-google text-neutral-900 leading-snug">
+              New to tech? <br className="hidden sm:inline" />
+              That’s a starting point, too.
+            </h3>
+            <p className="text-neutral-700 text-sm sm:text-base leading-relaxed">
+              You don’t need a finished portfolio or the perfect track choice. Pick a topic you’re curious about. If you’re unsure, tell us what interests you and we can start a conversation.
+            </p>
+          </div>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-neutral-900 hover:bg-neutral-800 text-white text-sm font-semibold transition-all shrink-0 active:scale-95"
+          >
+            <span>Ask about getting started</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
+
+      {/* 8. Community Invitation CTA */}
+      <CommunityInvitationBanner />
+    </div>
+  );
+}
+
