@@ -1,11 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   ArrowRight,
   ArrowDown,
-  Search,
-  Palette,
-  Code2,
   BookOpen,
   Wrench,
   Users2,
@@ -23,36 +21,33 @@ export default function OverviewPage() {
   const tracks = [
     {
       id: 'research-discovery',
+      image: '/images/track-research.png',
       badge: 'EXPLORE THE WHY',
-      badgeClass: 'bg-blue-50 text-google-blue border-blue-200',
+      themeClass: 'text-google-blue',
       title: 'Research & discovery',
       description:
         'Ask better questions, understand people, and turn insight into a clear problem worth solving.',
       topics: 'Problem framing · User research · Product thinking',
-      icon: Search,
-      iconBg: 'bg-blue-500/10 text-google-blue',
     },
     {
       id: 'design-creativity',
+      image: '/images/track-design.png',
       badge: 'MAKE IT MEANINGFUL',
-      badgeClass: 'bg-amber-50 text-amber-700 border-amber-200',
+      themeClass: 'text-amber-600',
       title: 'Design & creativity',
       description:
         'Translate ideas into thoughtful experiences, from a first sketch to a prototype people can use.',
       topics: 'UI/UX · Visual storytelling · Prototyping',
-      icon: Palette,
-      iconBg: 'bg-amber-500/10 text-amber-600',
     },
     {
       id: 'development',
+      image: '/images/track-development.png',
       badge: 'BRING IDEAS TO LIFE',
-      badgeClass: 'bg-emerald-50 text-google-green border-emerald-200',
+      themeClass: 'text-google-green',
       title: 'Development',
       description:
         'Learn the tools, write the code, and build useful things with people who enjoy figuring it out.',
       topics: 'Web & mobile · Cloud · AI foundations',
-      icon: Code2,
-      iconBg: 'bg-emerald-500/10 text-google-green',
     },
   ];
 
@@ -80,28 +75,28 @@ export default function OverviewPage() {
       desc: 'Build foundations with peers. Work through a topic, compare approaches, and make space for questions.',
       tag: 'Best for · Learning the fundamentals',
       icon: BookOpen,
-      iconBg: 'bg-blue-500/10 text-google-blue',
+      iconBg: 'bg-blue-50 text-google-blue',
     },
     {
       title: 'Hands-on workshops',
       desc: 'Get introduced to a tool or method, follow a practical exercise, and take away something to keep exploring.',
       tag: 'Best for · Trying something new',
       icon: Wrench,
-      iconBg: 'bg-emerald-500/10 text-google-green',
+      iconBg: 'bg-emerald-50 text-google-green',
     },
     {
       title: 'Project circles',
       desc: 'Connect research, design, and development around a shared problem. Learn through making and feedback.',
       tag: 'Best for · Putting skills into practice',
       icon: Users2,
-      iconBg: 'bg-amber-500/10 text-amber-600',
+      iconBg: 'bg-amber-50 text-amber-600',
     },
     {
       title: 'Knowledge sharing',
       desc: 'Walk through an idea, share a lesson from your process, and discover how other students approach their work.',
       tag: 'Best for · Exchanging perspectives',
       icon: Lightbulb,
-      iconBg: 'bg-purple-500/10 text-purple-600',
+      iconBg: 'bg-purple-50 text-purple-600',
     },
   ];
 
@@ -131,7 +126,7 @@ export default function OverviewPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* 1. Hero Section */}
-      <section className="pt-8 pb-14 sm:pb-20 lg:pt-12 lg:pb-24">
+      <section className="pt-8 pb-14 sm:pb-20 lg:pt-14 lg:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
@@ -139,7 +134,7 @@ export default function OverviewPage() {
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                 <span>OVERVIEW · PROGRAMS & LEARNING TRACKS</span>
               </div>
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold font-google text-neutral-900 tracking-tight leading-[1.08]">
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold font-google text-neutral-900 tracking-tight leading-[1.06]">
                 Find your spark. <br />
                 <span className="text-primary">Build your own path.</span>
               </h1>
@@ -148,18 +143,17 @@ export default function OverviewPage() {
               </p>
             </div>
 
-            {/* Right Artwork Graphic */}
+            {/* Right Artwork Graphic from Figma */}
             <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-sm aspect-square rounded-3xl bg-gradient-to-tr from-blue-100/60 via-amber-50/50 to-emerald-100/60 p-8 flex items-center justify-center border border-white/70 shadow-lg backdrop-blur-xs">
-                <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 border border-white shadow-card flex flex-col items-center justify-center gap-4 transform rotate-2 hover:rotate-0 transition-transform">
-                  <div className="w-20 h-20 rounded-2xl bg-blue-50 text-primary flex items-center justify-center shadow-xs">
-                    <Search className="w-10 h-10" />
-                  </div>
-                  <div className="space-y-1.5 w-32">
-                    <div className="h-2 w-full bg-neutral-200 rounded-full" />
-                    <div className="h-2 w-3/4 bg-neutral-200 rounded-full" />
-                  </div>
-                </div>
+              <div className="relative w-full max-w-[280px] aspect-square drop-shadow-md">
+                <Image
+                  src="/images/overview-artwork.png"
+                  alt="GDGoC UGM Research glass artwork"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 280px"
+                  className="object-contain"
+                />
               </div>
             </div>
           </div>
@@ -212,35 +206,37 @@ export default function OverviewPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {tracks.map((t) => {
-              const Icon = t.icon;
-              return (
-                <div
-                  key={t.id}
-                  className="bg-white rounded-3xl p-7 border border-neutral-200/80 shadow-xs hover:shadow-hover transition-all flex flex-col justify-between group"
-                >
-                  <div>
-                    {/* Header Graphic */}
-                    <div className="w-full h-44 rounded-2xl bg-neutral-50 border border-neutral-100 flex items-center justify-center mb-6 relative overflow-hidden group-hover:bg-neutral-100/70 transition-colors">
-                      <div className={`w-16 h-16 rounded-2xl ${t.iconBg} flex items-center justify-center transform group-hover:scale-110 transition-transform`}>
-                        <Icon className="w-8 h-8" />
-                      </div>
-                    </div>
+            {tracks.map((t) => (
+              <div
+                key={t.id}
+                className="bg-white rounded-3xl border border-neutral-200 shadow-xs hover:shadow-card transition-all flex flex-col justify-between overflow-hidden group"
+              >
+                <div>
+                  <div className="relative w-full h-[232px] bg-neutral-50 border-b border-neutral-100 overflow-hidden">
+                    <Image
+                      src={t.image}
+                      alt={t.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 400px"
+                      className="object-cover group-hover:scale-102 transition-transform duration-300"
+                    />
+                  </div>
 
-                    <div className={`inline-block px-3 py-0.5 rounded-full text-[11px] font-semibold border ${t.badgeClass} mb-3 uppercase tracking-wider`}>
+                  <div className="p-7">
+                    <div className={`text-[11px] font-bold uppercase tracking-wider mb-2 ${t.themeClass}`}>
                       {t.badge}
                     </div>
-
-                    <h3 className="text-xl font-bold font-google text-neutral-900 mb-2.5">
+                    <h3 className="text-2xl font-bold font-google text-neutral-900 mb-3">
                       {t.title}
                     </h3>
-
                     <p className="text-neutral-600 text-sm leading-relaxed mb-6">
                       {t.description}
                     </p>
                   </div>
+                </div>
 
-                  <div className="pt-4 border-t border-neutral-100">
+                <div className="px-7 pb-7 pt-0">
+                  <div className="pt-4 border-t border-neutral-200">
                     <div className="text-xs text-neutral-500 font-medium mb-3">
                       {t.topics}
                     </div>
@@ -253,8 +249,8 @@ export default function OverviewPage() {
                     </Link>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -268,7 +264,7 @@ export default function OverviewPage() {
             </h2>
           </div>
 
-          <div className="bg-white rounded-3xl border border-neutral-200/90 shadow-xs overflow-hidden">
+          <div className="bg-white rounded-3xl border border-neutral-200 shadow-xs overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
@@ -326,7 +322,7 @@ export default function OverviewPage() {
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-3xl p-7 border border-neutral-200/80 shadow-xs hover:shadow-card transition-all flex flex-col justify-between"
+                  className="bg-white rounded-3xl p-7 border border-neutral-200 shadow-xs hover:shadow-card transition-all flex flex-col justify-between"
                 >
                   <div className="space-y-4">
                     <div className={`w-10 h-10 rounded-xl ${f.iconBg} flex items-center justify-center`}>
@@ -340,7 +336,7 @@ export default function OverviewPage() {
                     </p>
                   </div>
 
-                  <div className="pt-6 border-t border-neutral-100 text-xs font-medium text-neutral-500">
+                  <div className="pt-6 border-t border-neutral-200 text-xs font-medium text-neutral-500">
                     {f.tag}
                   </div>
                 </div>
@@ -381,31 +377,32 @@ export default function OverviewPage() {
         </div>
       </section>
 
-      {/* 7. New to Tech? Banner */}
-      <div id="starting-point" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-10">
-        <div className="bg-[#fff7df] border border-amber-200/80 rounded-3xl p-8 sm:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
-          <div className="space-y-2 max-w-xl">
-            <h3 className="text-2xl sm:text-3xl font-bold font-google text-neutral-900 leading-snug">
-              New to tech? <br className="hidden sm:inline" />
-              That’s a starting point, too.
-            </h3>
-            <p className="text-neutral-700 text-sm sm:text-base leading-relaxed">
-              You don’t need a finished portfolio or the perfect track choice. Pick a topic you’re curious about. If you’re unsure, tell us what interests you and we can start a conversation.
-            </p>
+      {/* 7. New to Tech? Banner (Full-width gold container as in Figma) */}
+      <section id="starting-point" className="w-full bg-[#fef7e0] border-y border-amber-200 py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+            <div className="space-y-2 max-w-xl">
+              <h3 className="text-2xl sm:text-3xl font-bold font-google text-neutral-900 leading-snug">
+                New to tech? <br className="hidden sm:inline" />
+                That’s a starting point, too.
+              </h3>
+              <p className="text-neutral-700 text-sm sm:text-base leading-relaxed">
+                You don’t need a finished portfolio or the perfect track choice. Pick a topic you’re curious about. If you’re unsure, tell us what interests you and we can start a conversation.
+              </p>
+            </div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-neutral-900 hover:bg-neutral-800 text-white text-sm font-semibold transition-all shrink-0 active:scale-95"
+            >
+              <span>Ask about getting started</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-neutral-900 hover:bg-neutral-800 text-white text-sm font-semibold transition-all shrink-0 active:scale-95"
-          >
-            <span>Ask about getting started</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
         </div>
-      </div>
+      </section>
 
       {/* 8. Community Invitation CTA */}
       <CommunityInvitationBanner />
     </div>
   );
 }
-

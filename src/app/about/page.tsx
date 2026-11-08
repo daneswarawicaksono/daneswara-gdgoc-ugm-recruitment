@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { GDGLogo } from '@/components/ui/GDGLogo';
+import Image from 'next/image';
 import { CommunityInvitationBanner } from '@/components/common/CommunityInvitationBanner';
 import {
   ArrowRight,
-  Sparkles,
   BookOpen,
   Users2,
   Code2,
@@ -22,34 +21,34 @@ export default function AboutPage() {
     {
       title: 'Stay curious',
       desc: 'Ask the extra question. Be willing to learn something outside your comfort zone.',
-      color: '#4285F4',
-      bgClass: 'bg-blue-500/10 text-google-blue',
       barClass: 'bg-google-blue',
       icon: BookOpen,
+      iconColor: 'text-google-blue',
+      iconBg: 'bg-blue-50',
     },
     {
       title: 'Make room',
       desc: 'Welcome different perspectives, respect each other, and help people find their voice.',
-      color: '#EA4335',
-      bgClass: 'bg-red-500/10 text-google-red',
       barClass: 'bg-google-red',
       icon: Users2,
+      iconColor: 'text-google-red',
+      iconBg: 'bg-red-50',
     },
     {
       title: 'Learn by building',
       desc: 'Try a small experiment. Share the rough version. Let feedback guide what comes next.',
-      color: '#FBBC05',
-      bgClass: 'bg-amber-500/10 text-amber-600',
       barClass: 'bg-google-yellow',
       icon: Code2,
+      iconColor: 'text-amber-600',
+      iconBg: 'bg-amber-50',
     },
     {
       title: 'Give something back',
       desc: 'Share a resource, explain what clicked, or help someone take their next step.',
-      color: '#34A853',
-      bgClass: 'bg-emerald-500/10 text-google-green',
       barClass: 'bg-google-green',
       icon: Heart,
+      iconColor: 'text-google-green',
+      iconBg: 'bg-emerald-50',
     },
   ];
 
@@ -71,7 +70,7 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* 1. Hero Section */}
-      <section className="pt-8 pb-16 sm:pb-24 lg:pt-12 lg:pb-28">
+      <section className="pt-8 pb-16 sm:pb-24 lg:pt-14 lg:pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
@@ -79,7 +78,7 @@ export default function AboutPage() {
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                 <span>ABOUT GDGOC UGM</span>
               </div>
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold font-google text-neutral-900 tracking-tight leading-[1.08]">
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold font-google text-neutral-900 tracking-tight leading-[1.06]">
                 Built by students. <br />
                 <span className="text-primary">For what’s next.</span>
               </h1>
@@ -91,20 +90,17 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Right Artwork Emblem */}
+            {/* Right Community Mark Artwork from Figma */}
             <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-md aspect-square rounded-3xl bg-gradient-to-tr from-amber-100/50 via-blue-100/50 to-emerald-100/50 p-8 flex items-center justify-center border border-white/70 shadow-lg backdrop-blur-xs">
-                <div className="bg-white/90 backdrop-blur-md rounded-3xl p-10 border border-white shadow-card flex flex-col items-center justify-center gap-4 transform -rotate-2 hover:rotate-0 transition-transform">
-                  <GDGLogo size={80} />
-                  <div className="text-center pt-2">
-                    <span className="font-google font-bold text-neutral-900 text-lg block">
-                      GDGoC UGM
-                    </span>
-                    <span className="text-xs text-neutral-500 font-medium">
-                      Student Community
-                    </span>
-                  </div>
-                </div>
+              <div className="relative w-full max-w-[464px] aspect-[464/400] drop-shadow-md">
+                <Image
+                  src="/images/about-artwork.png"
+                  alt="GDGoC UGM Community mark artwork"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 464px"
+                  className="object-contain"
+                />
               </div>
             </div>
           </div>
@@ -161,12 +157,12 @@ export default function AboutPage() {
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-3xl p-7 border border-neutral-200/80 shadow-xs hover:shadow-card transition-all flex flex-col justify-between"
+                  className="bg-white rounded-3xl p-7 border border-neutral-200 shadow-xs hover:shadow-card transition-all flex flex-col justify-between"
                 >
                   <div className="space-y-4">
-                    {/* Top colored accent bar */}
-                    <div className={`w-8 h-1 rounded-full ${v.barClass}`} />
-                    <div className={`w-10 h-10 rounded-xl ${v.bgClass} flex items-center justify-center`}>
+                    {/* Top colored accent line as in Figma */}
+                    <div className={`w-10 h-1 rounded-full ${v.barClass}`} />
+                    <div className={`w-10 h-10 rounded-xl ${v.iconBg} ${v.iconColor} flex items-center justify-center`}>
                       <Icon className="w-5 h-5" />
                     </div>
                     <h3 className="text-xl font-bold font-google text-neutral-900">
@@ -228,26 +224,33 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 5. Responsibility Banner */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-10">
-        <div className="bg-[#fff7df] border border-amber-200/80 rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center gap-6 sm:gap-8">
-          <div className="w-14 h-14 rounded-2xl bg-[#FBBC05] text-white flex items-center justify-center shrink-0 shadow-sm">
-            <Sparkles className="w-7 h-7" />
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-xl sm:text-2xl font-bold font-google text-neutral-900 leading-snug">
-              A space to learn. A responsibility to care.
-            </h3>
-            <p className="text-neutral-700 text-sm sm:text-base leading-relaxed">
-              We want every conversation and learning experience to be respectful, inclusive, and constructive. Be kind, give credit, and make room for people who are just getting started.
-            </p>
+      {/* 5. Responsibility Banner (Full-width gold container as in Figma) */}
+      <section className="w-full bg-[#fef7e0] border-y border-amber-200 py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-8 lg:gap-12">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 text-[#FBBC05] shrink-0 flex items-center justify-center">
+              <svg
+                viewBox="0 0 100 100"
+                fill="currentColor"
+                className="w-full h-full text-[#FBBC05]"
+              >
+                <path d="M50 0C50 27.6142 27.6142 50 0 50C27.6142 50 50 72.3858 50 100C50 72.3858 72.3858 50 100 50C72.3858 50 50 27.6142 50 0Z" />
+              </svg>
+            </div>
+            <div className="space-y-3 max-w-4xl">
+              <h3 className="text-2xl sm:text-3xl font-bold font-google text-neutral-900 leading-snug">
+                A space to learn. A responsibility to care.
+              </h3>
+              <p className="text-neutral-700 text-sm sm:text-base leading-relaxed">
+                We want every conversation and learning experience to be respectful, inclusive, and constructive. Be kind, give credit, and make room for people who are just getting started.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* 6. Community Invitation CTA */}
       <CommunityInvitationBanner />
     </div>
   );
 }
-

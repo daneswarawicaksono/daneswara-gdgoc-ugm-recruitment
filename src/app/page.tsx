@@ -7,11 +7,10 @@ import {
   LearningFormatsPreview,
   ProjectCampus,
   FirstMoveJourney,
-  InclusionBanner,
+  BelongingStatement,
   LandingFaq,
 } from '@/components/landing/LandingSections';
 import { CommunityInvitationBanner } from '@/components/common/CommunityInvitationBanner';
-import { CatalogContainer } from '@/components/catalog/CatalogContainer';
 
 export const metadata: Metadata = {
   title: 'GDGoC UGM | Google Developer Groups on Campus Universitas Gadjah Mada',
@@ -43,32 +42,14 @@ export default function HomePage() {
       {/* 7. First Move Journey Steps */}
       <FirstMoveJourney />
 
-      {/* 8. Inclusion Banner */}
-      <InclusionBanner />
+      {/* 8. Belonging Statement (Full width mint green) */}
+      <BelongingStatement />
 
       {/* 9. FAQs */}
       <LandingFaq />
 
       {/* 10. Community Invitation CTA Banner */}
       <CommunityInvitationBanner />
-
-      {/* 11. Interactive Unified Catalog Explorer */}
-      <section id="catalog" className="py-16 sm:py-24 border-t border-neutral-200 bg-neutral-50/40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-          <div className="space-y-2">
-            <span className="text-xs font-semibold uppercase tracking-wider text-primary">
-              EXPLORE OUR RECRUITMENT OFFERINGS
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold font-google text-neutral-900">
-              Interactive Community Catalog
-            </h2>
-            <p className="text-sm text-neutral-600">
-              Filter and search through all learning tracks, formats, community values, and roles.
-            </p>
-          </div>
-        </div>
-        <CatalogContainer />
-      </section>
     </div>
   );
 }

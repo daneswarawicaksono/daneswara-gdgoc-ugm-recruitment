@@ -2,34 +2,31 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   ArrowRight,
-  Search,
-  Palette,
-  Code2,
   BookOpen,
   Wrench,
   Users2,
-  Sparkles,
   ChevronDown,
-  Terminal,
+  Sparkles,
 } from 'lucide-react';
 
 export function TickerBar() {
   return (
-    <div className="border-y border-neutral-200 bg-neutral-50/60 py-4">
+    <div className="border-y border-neutral-200 bg-white py-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap items-center justify-center sm:justify-between gap-6 text-xs sm:text-sm font-medium text-neutral-700">
+        <div className="flex flex-wrap items-center justify-between gap-6 text-xs sm:text-sm font-medium text-neutral-800">
           <div className="flex items-center gap-2.5">
-            <span className="w-2 h-2 rounded-full bg-[#4285F4]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#4285F4]" />
             <span>Learn by doing</span>
           </div>
           <div className="flex items-center gap-2.5">
-            <span className="w-2 h-2 rounded-full bg-[#EA4335]" />
+            <span className="w-2 h-2 bg-[#EA4335]" />
             <span>Connect across disciplines</span>
           </div>
           <div className="flex items-center gap-2.5">
-            <span className="w-2 h-2 rounded-full bg-[#34A853]" />
+            <span className="w-2 h-2 bg-[#34A853]" />
             <span>Build with purpose</span>
           </div>
         </div>
@@ -42,8 +39,8 @@ export function NotJustLearning() {
   return (
     <section className="py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          <div className="lg:col-span-6 space-y-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="lg:col-span-5 space-y-4">
             <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-500">
               <span className="w-1.5 h-1.5 rounded-full bg-primary" />
               <span>A PLACE TO START</span>
@@ -63,21 +60,21 @@ export function NotJustLearning() {
             </div>
           </div>
 
-          <div className="lg:col-span-6 space-y-5 text-neutral-600 text-sm sm:text-base leading-relaxed">
+          <div className="lg:col-span-7 space-y-5 text-neutral-600 text-sm sm:text-base leading-relaxed">
             <p>
               Google Developer Groups on Campus, Universitas Gadjah Mada brings students together around one simple idea: <strong>we can go further when we learn with each other.</strong>
             </p>
             <p>
               From your first line of code to your next proudest idea, there’s room to ask questions, share what you know, and try something new.
             </p>
-            <div className="flex flex-wrap gap-2 pt-2">
-              <span className="px-3 py-1 rounded-full bg-neutral-100 text-xs font-medium text-neutral-700 border border-neutral-200">
+            <div className="flex flex-wrap gap-2.5 pt-2">
+              <span className="px-3.5 py-1.5 rounded-full bg-neutral-100 text-xs font-medium text-neutral-700 border border-neutral-200">
                 Student-led
               </span>
-              <span className="px-3 py-1 rounded-full bg-neutral-100 text-xs font-medium text-neutral-700 border border-neutral-200">
+              <span className="px-3.5 py-1.5 rounded-full bg-neutral-100 text-xs font-medium text-neutral-700 border border-neutral-200">
                 Peer-powered
               </span>
-              <span className="px-3 py-1 rounded-full bg-neutral-100 text-xs font-medium text-neutral-700 border border-neutral-200">
+              <span className="px-3.5 py-1.5 rounded-full bg-neutral-100 text-xs font-medium text-neutral-700 border border-neutral-200">
                 Community-first
               </span>
             </div>
@@ -92,44 +89,38 @@ export function LearningTracksPreview() {
   const tracks = [
     {
       id: 'research-discovery',
-      badge: 'EXPLORE THE WHY',
-      themeColor: 'blue',
-      badgeBg: 'bg-blue-50 text-google-blue border-blue-200',
+      image: '/images/track-research.png',
+      theme: 'EXPLORE THE WHY',
+      themeClass: 'text-google-blue',
       title: 'Research & discovery',
       description:
         'Ask better questions, understand people, and turn insight into a clear problem worth solving.',
       topics: 'Problem framing · User research · Product thinking',
-      icon: Search,
-      iconBg: 'bg-blue-500/10 text-google-blue',
     },
     {
       id: 'design-creativity',
-      badge: 'MAKE IT MEANINGFUL',
-      themeColor: 'yellow',
-      badgeBg: 'bg-amber-50 text-amber-700 border-amber-200',
+      image: '/images/track-design.png',
+      theme: 'MAKE IT MEANINGFUL',
+      themeClass: 'text-amber-600',
       title: 'Design & creativity',
       description:
         'Translate ideas into thoughtful experiences, from a first sketch to a prototype people can use.',
       topics: 'UI/UX · Visual storytelling · Prototyping',
-      icon: Palette,
-      iconBg: 'bg-amber-500/10 text-amber-600',
     },
     {
       id: 'development',
-      badge: 'BRING IDEAS TO LIFE',
-      themeColor: 'green',
-      badgeBg: 'bg-emerald-50 text-google-green border-emerald-200',
+      image: '/images/track-development.png',
+      theme: 'BRING IDEAS TO LIFE',
+      themeClass: 'text-google-green',
       title: 'Development',
       description:
         'Learn the tools, write the code, and build useful things with people who enjoy figuring it out.',
       topics: 'Web & mobile · Cloud · AI foundations',
-      icon: Code2,
-      iconBg: 'bg-emerald-500/10 text-google-green',
     },
   ];
 
   return (
-    <section id="tracks" className="py-20 sm:py-28 bg-neutral-50/50 border-t border-neutral-200">
+    <section id="tracks" className="py-20 sm:py-28 border-t border-neutral-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <div className="space-y-3">
@@ -155,38 +146,38 @@ export function LearningTracksPreview() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {tracks.map((t) => {
-            const Icon = t.icon;
-            return (
-              <div
-                key={t.id}
-                className="bg-white rounded-3xl p-7 border border-neutral-200/80 shadow-xs hover:shadow-hover transition-all flex flex-col justify-between group"
-              >
-                <div>
-                  {/* Artwork Illustration Header */}
-                  <div className="w-full h-44 rounded-2xl bg-neutral-50 border border-neutral-100 flex items-center justify-center mb-6 relative overflow-hidden group-hover:bg-neutral-100/70 transition-colors">
-                    <div className={`w-16 h-16 rounded-2xl ${t.iconBg} flex items-center justify-center transform group-hover:scale-110 transition-transform`}>
-                      <Icon className="w-8 h-8" />
-                    </div>
-                  </div>
+          {tracks.map((t) => (
+            <div
+              key={t.id}
+              className="bg-white rounded-3xl border border-neutral-200 shadow-xs hover:shadow-card transition-all flex flex-col justify-between overflow-hidden group"
+            >
+              <div>
+                {/* Track Illustration from Figma */}
+                <div className="relative w-full h-[232px] bg-neutral-50 border-b border-neutral-100 overflow-hidden">
+                  <Image
+                    src={t.image}
+                    alt={t.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 400px"
+                    className="object-cover group-hover:scale-102 transition-transform duration-300"
+                  />
+                </div>
 
-                  {/* Badge */}
-                  <div className={`inline-block px-3 py-0.5 rounded-full text-[11px] font-semibold border ${t.badgeBg} mb-3 uppercase tracking-wider`}>
-                    {t.badge}
+                <div className="p-7">
+                  <div className={`text-[11px] font-bold uppercase tracking-wider mb-2 ${t.themeClass}`}>
+                    {t.theme}
                   </div>
-
-                  {/* Heading */}
-                  <h3 className="text-xl font-bold font-google text-neutral-900 mb-2.5">
+                  <h3 className="text-2xl font-bold font-google text-neutral-900 mb-3">
                     {t.title}
                   </h3>
-
-                  {/* Description */}
                   <p className="text-neutral-600 text-sm leading-relaxed mb-6">
                     {t.description}
                   </p>
                 </div>
+              </div>
 
-                <div className="pt-4 border-t border-neutral-100">
+              <div className="px-7 pb-7 pt-0">
+                <div className="pt-4 border-t border-neutral-200">
                   <div className="text-xs text-neutral-500 font-medium mb-3">
                     {t.topics}
                   </div>
@@ -199,8 +190,8 @@ export function LearningTracksPreview() {
                   </Link>
                 </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -254,7 +245,7 @@ export function LearningFormatsPreview() {
             return (
               <div
                 key={idx}
-                className="bg-white rounded-3xl p-8 border border-neutral-200/80 shadow-xs hover:border-neutral-300 transition-all flex flex-col justify-between"
+                className="bg-white rounded-3xl p-8 border border-neutral-200 shadow-xs hover:border-neutral-300 transition-all flex flex-col justify-between"
               >
                 <div className="space-y-4">
                   <div className="w-10 h-10 rounded-xl bg-blue-50 text-primary flex items-center justify-center">
@@ -268,7 +259,7 @@ export function LearningFormatsPreview() {
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-neutral-100 text-xs font-medium text-primary">
+                <div className="pt-6 border-t border-neutral-200 text-xs font-medium text-primary">
                   {f.linkText}
                 </div>
               </div>
@@ -282,49 +273,23 @@ export function LearningFormatsPreview() {
 
 export function ProjectCampus() {
   return (
-    <section className="py-20 sm:py-28 bg-neutral-50/50 border-t border-neutral-200">
+    <section className="py-20 sm:py-28 border-t border-neutral-200 bg-neutral-50/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Mockup Card */}
-          <div className="lg:col-span-6">
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-neutral-200/90 shadow-md">
-              {/* Mockup Header */}
-              <div className="flex items-center justify-between pb-6 border-b border-neutral-100 mb-6">
-                <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-full bg-[#EA4335]" />
-                  <span className="w-3 h-3 rounded-full bg-[#FBBC05]" />
-                  <span className="w-3 h-3 rounded-full bg-[#34A853]" />
-                </div>
-                <div className="font-mono text-xs text-neutral-400">
-                  IDEAS → PROTOTYPE
-                </div>
-              </div>
-
-              {/* Mockup Content */}
-              <div className="space-y-4">
-                <h4 className="text-2xl font-bold font-google text-neutral-900">
-                  A little less friction. <br />
-                  A better campus day.
-                </h4>
-                <div className="flex flex-wrap gap-2 pt-2">
-                  <span className="px-3 py-1 rounded-full bg-blue-50 text-google-blue text-xs font-semibold">
-                    Discover
-                  </span>
-                  <span className="px-3 py-1 rounded-full bg-emerald-50 text-google-green text-xs font-semibold">
-                    Connect
-                  </span>
-                  <span className="px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-semibold">
-                    Share
-                  </span>
-                </div>
-                <p className="text-xs text-neutral-500 pt-4 border-t border-neutral-100">
-                  Start with a routine campus need. Build a solution with peers.
-                </p>
-              </div>
+          {/* Left Mockup Artwork from Figma */}
+          <div className="lg:col-span-6 flex justify-center">
+            <div className="relative w-full max-w-[540px] aspect-[592/444] rounded-3xl overflow-hidden shadow-sm border border-neutral-200/80">
+              <Image
+                src="/images/campus-project-card.png"
+                alt="Campus Project Preview Artwork"
+                fill
+                sizes="(max-width: 1024px) 100vw, 540px"
+                className="object-cover"
+              />
             </div>
           </div>
 
-          {/* Right Text */}
+          {/* Right Copy */}
           <div className="lg:col-span-6 space-y-5">
             <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-500">
               <span className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -389,11 +354,12 @@ export function FirstMoveJourney() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {steps.map((s, idx) => (
-            <div key={idx} className="space-y-3 border-l-2 border-primary/20 pl-6">
+            <div key={idx} className="space-y-3">
               <div className="text-3xl sm:text-4xl font-extrabold font-google text-primary">
                 {s.num}
               </div>
-              <h3 className="text-lg font-bold font-google text-neutral-900">
+              <div className="w-full h-px bg-neutral-200" />
+              <h3 className="text-xl font-bold font-google text-neutral-900 pt-1">
                 {s.title}
               </h3>
               <p className="text-neutral-600 text-sm leading-relaxed">
@@ -407,23 +373,34 @@ export function FirstMoveJourney() {
   );
 }
 
-export function InclusionBanner() {
+export function BelongingStatement() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-10">
-      <div className="bg-[#eaf5ed] border border-emerald-100 rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center gap-6 sm:gap-8">
-        <div className="w-14 h-14 rounded-2xl bg-google-green text-white flex items-center justify-center shrink-0 shadow-sm">
-          <Sparkles className="w-7 h-7" />
-        </div>
-        <div className="space-y-2">
-          <h3 className="text-xl sm:text-2xl font-bold font-google text-neutral-900 leading-snug">
-            Different majors. Different starting points. A place for all of them.
-          </h3>
-          <p className="text-neutral-600 text-sm sm:text-base leading-relaxed">
-            You don’t have to be the most experienced person in the room. Curiosity, kindness, and a willingness to learn are a good place to start.
-          </p>
+    <section className="w-full bg-[#eaf5ed] border-y border-emerald-100 py-16 sm:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-8 lg:gap-12">
+          {/* Green 4-point Sparkle Graphic */}
+          <div className="w-16 h-16 sm:w-20 sm:h-20 text-google-green shrink-0 flex items-center justify-center">
+            <svg
+              viewBox="0 0 100 100"
+              fill="currentColor"
+              className="w-full h-full text-[#34A853]"
+            >
+              <path d="M50 0C50 27.6142 27.6142 50 0 50C27.6142 50 50 72.3858 50 100C50 72.3858 72.3858 50 100 50C72.3858 50 50 27.6142 50 0Z" />
+            </svg>
+          </div>
+
+          <div className="space-y-3 max-w-4xl">
+            <h3 className="text-2xl sm:text-4xl font-bold font-google text-neutral-900 leading-snug">
+              Different majors. Different starting points. <br className="hidden sm:inline" />
+              A place for all of them.
+            </h3>
+            <p className="text-neutral-700 text-sm sm:text-base leading-relaxed">
+              You don’t have to be the most experienced person in the room. Curiosity, kindness, and a willingness to learn are a good place to start.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -472,7 +449,7 @@ export function LandingFaq() {
             {faqs.map((faq, idx) => {
               const isOpen = openIndex === idx;
               return (
-                <div key={idx} className="py-5">
+                <div key={idx} className="py-6 first:pt-0 last:pb-0">
                   <button
                     onClick={() => setOpenIndex(isOpen ? null : idx)}
                     className="w-full flex items-center justify-between text-left group"
@@ -501,4 +478,3 @@ export function LandingFaq() {
     </section>
   );
 }
-
