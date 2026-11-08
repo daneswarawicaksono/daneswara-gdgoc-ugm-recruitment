@@ -151,8 +151,9 @@ export default function ContactPage() {
 
               {/* Community Updates Callout */}
               <div className="bg-[#fff7df] border border-amber-200/80 rounded-3xl p-6 sm:p-7 space-y-3">
-                <div className="text-[11px] font-semibold uppercase tracking-wider text-amber-800">
-                  STAY CURIOUS, STAY CONNECTED
+                <div className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-amber-800">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
+                  <span>STAY CURIOUS, STAY CONNECTED</span>
                 </div>
                 <h4 className="text-lg font-bold font-google text-neutral-900">
                   Looking for community updates?
@@ -369,7 +370,7 @@ export default function ContactPage() {
                         <ArrowRight className="w-4 h-4" />
                       </button>
                       <span className="text-[11px] text-neutral-400">
-                        Please don’t include passwords or sensitive personal info.
+                        Please don’t include passwords or sensitive personal information.
                       </span>
                     </div>
                   </form>
@@ -381,7 +382,7 @@ export default function ContactPage() {
       </section>
 
       {/* 3. A Little Guidance Section */}
-      <section className="py-20 sm:py-24 border-t border-neutral-200 bg-neutral-50/50">
+      <section className="py-20 sm:py-24 border-t border-neutral-200 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-5 space-y-4">

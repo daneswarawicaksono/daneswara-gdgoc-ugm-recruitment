@@ -224,7 +224,7 @@ export function LearningFormatsPreview() {
   ];
 
   return (
-    <section className="py-20 sm:py-28 border-t border-neutral-200">
+    <section className="py-20 sm:py-28 border-t border-neutral-200 bg-[#f8f9fa]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-3 mb-12">
           <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-500">
@@ -259,9 +259,13 @@ export function LearningFormatsPreview() {
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-neutral-200 text-xs font-medium text-primary">
-                  {f.linkText}
-                </div>
+                <Link
+                  href="/overview#formats"
+                  className="pt-6 border-t border-neutral-200 text-xs font-medium text-primary flex items-center gap-1.5 group/link"
+                >
+                  <span>{f.linkText}</span>
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />
+                </Link>
               </div>
             );
           })}
@@ -273,7 +277,7 @@ export function LearningFormatsPreview() {
 
 export function ProjectCampus() {
   return (
-    <section className="py-20 sm:py-28 border-t border-neutral-200 bg-neutral-50/40">
+    <section className="py-20 sm:py-28 border-t border-neutral-200 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Mockup Artwork from Figma */}

@@ -86,7 +86,7 @@ export default function AboutPage() {
                 We’re a community of learners and makers at Universitas Gadjah Mada, connected by curiosity and the belief that technology can do good.
               </p>
               <div className="text-xs text-neutral-400 font-mono tracking-wider pt-2">
-                UNIVERSITAS GADJAH MADA · 2026/2027
+                UNIVERSITAS GADJAH MADA · 2024/2025
               </div>
             </div>
 

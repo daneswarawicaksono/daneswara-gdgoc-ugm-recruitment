@@ -99,7 +99,7 @@ export function Footer() {
         {/* Bottom copyright metadata matching Figma */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-500 gap-4">
           <div>
-            © GDGoC Universitas Gadjah Mada · 2026/2027
+            © GDGoC Universitas Gadjah Mada · 2024/2025
           </div>
           <div>
             Made for the campus. Open to possibilities.

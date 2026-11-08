@@ -34,8 +34,8 @@ export function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Navigation - Pill Container */}
-          <nav className="hidden md:flex items-center p-1.5 rounded-full border border-neutral-200/80 bg-neutral-50/70 shadow-xs">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => {
               const isActive =
                 link.href === '/'
@@ -47,8 +47,8 @@ export function Navbar() {
                   href={link.href}
                   className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all ${
                     isActive
-                      ? 'bg-blue-50 text-primary font-semibold shadow-2xs'
-                      : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100/80'
+                      ? 'bg-[#eaf2ff] text-primary font-semibold'
+                      : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100/60'
                   }`}
                 >
                   {link.label}

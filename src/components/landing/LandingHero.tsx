@@ -33,7 +33,7 @@ export function LandingHero() {
                 href="/overview#tracks"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-xs hover:shadow-md transition-all active:scale-95"
               >
-                <span>Find your learning track</span>
+                <span>Find your track</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link

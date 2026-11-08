@@ -300,7 +300,7 @@ export default function OverviewPage() {
       </section>
 
       {/* 5. Ways to Learn (Formats) */}
-      <section id="formats" className="py-20 sm:py-28 border-t border-neutral-200">
+      <section id="formats" className="py-20 sm:py-28 border-t border-neutral-200 bg-[#f8f9fa]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-3 mb-12">
             <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-500">
@@ -316,22 +316,22 @@ export default function OverviewPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {formats.map((f, idx) => {
               const Icon = f.icon;
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-3xl p-7 border border-neutral-200 shadow-xs hover:shadow-card transition-all flex flex-col justify-between"
+                  className="bg-white rounded-3xl p-8 border border-neutral-200 shadow-xs hover:shadow-card transition-all flex flex-col justify-between"
                 >
                   <div className="space-y-4">
                     <div className={`w-10 h-10 rounded-xl ${f.iconBg} flex items-center justify-center`}>
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h3 className="text-xl font-bold font-google text-neutral-900">
+                    <h3 className="text-2xl font-bold font-google text-neutral-900">
                       {f.title}
                     </h3>
-                    <p className="text-neutral-600 text-sm leading-relaxed">
+                    <p className="text-neutral-600 text-sm sm:text-base leading-relaxed">
                       {f.desc}
                     </p>
                   </div>
@@ -347,7 +347,7 @@ export default function OverviewPage() {
       </section>
 
       {/* 6. Learning Journey Roadmap */}
-      <section id="journey" className="py-20 sm:py-28 border-t border-neutral-200 bg-neutral-50/50">
+      <section id="journey" className="py-20 sm:py-28 border-t border-neutral-200 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-3 mb-16">
             <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-500">
@@ -361,11 +361,11 @@ export default function OverviewPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {journeySteps.map((j, idx) => (
-              <div key={idx} className="space-y-3 border-l-2 border-primary/20 pl-6">
+              <div key={idx} className="space-y-3">
                 <div className="text-3xl sm:text-4xl font-extrabold font-google text-primary">
                   {j.num}
                 </div>
-                <h3 className="text-lg font-bold font-google text-neutral-900">
+                <h3 className="text-xl font-bold font-google text-neutral-900">
                   {j.title}
                 </h3>
                 <p className="text-neutral-600 text-sm leading-relaxed">
@@ -381,22 +381,31 @@ export default function OverviewPage() {
       <section id="starting-point" className="w-full bg-[#fef7e0] border-y border-amber-200 py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
-            <div className="space-y-2 max-w-xl">
-              <h3 className="text-2xl sm:text-3xl font-bold font-google text-neutral-900 leading-snug">
-                New to tech? <br className="hidden sm:inline" />
-                That’s a starting point, too.
+            <div className="space-y-3 max-w-sm">
+              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-800">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
+                <span>A STARTING POINT FOR EVERYONE</span>
+              </div>
+              <h3 className="text-3xl sm:text-4xl font-bold font-google text-neutral-900 leading-tight">
+                New to tech? <br />
+                That’s a starting point, <br />
+                too.
               </h3>
-              <p className="text-neutral-700 text-sm sm:text-base leading-relaxed">
-                You don’t need a finished portfolio or the perfect track choice. Pick a topic you’re curious about. If you’re unsure, tell us what interests you and we can start a conversation.
-              </p>
             </div>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-neutral-900 hover:bg-neutral-800 text-white text-sm font-semibold transition-all shrink-0 active:scale-95"
-            >
-              <span>Ask about getting started</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="space-y-4 max-w-xl">
+              <p className="text-neutral-700 text-sm sm:text-base leading-relaxed">
+                You don’t have to have a finished portfolio or the perfect track choice. Pick a topic you’re curious about. If you’re unsure, tell us what interests you and we can start a conversation.
+              </p>
+              <div>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary-hover group"
+                >
+                  <span>Ask about getting started</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
