@@ -36,19 +36,25 @@ gdgoc-ugm-recruitment/
 ├── public/                 # Static assets and brand icons
 ├── src/
 │   ├── app/                # Next.js App Router (Pages, Layouts, Error boundaries)
-│   │   ├── tracks/[id]/    # Page 2: Dynamic single-item Track detail view
+│   │   ├── about/          # About Page: Community Story, Values & Contribution
+│   │   ├── catalog/        # Unified Directory & Interactive Catalog Explorer
+│   │   ├── contact/        # Contact Page: Community Inquiries & Validated Form
+│   │   ├── overview/       # Overview Page: Pathways, Comparison Matrix & Formats
+│   │   ├── tracks/[id]/    # Dynamic single-item Track detail view with SSG
 │   │   │   └── page.tsx    # SSG generation, dynamic metadata & track loader
 │   │   ├── error.tsx       # Global Error Boundary fallback with retry
-│   │   ├── globals.css     # Tailwind directives and custom shimmer animations
+│   │   ├── globals.css     # Tailwind directives and Google Sans typography
 │   │   ├── layout.tsx      # Root HTML shell with Navbar, Footer & QueryProvider
 │   │   ├── loading.tsx     # Animated Skeleton loader for route transitions
 │   │   ├── not-found.tsx   # Custom 404 state for invalid track parameters
-│   │   └── page.tsx        # Page 1: Main Dashboard & Unified Catalog
+│   │   └── page.tsx        # Landing Page: Official GDGoC UGM Landing Experience
 │   ├── components/
 │   │   ├── catalog/        # CatalogContainer, CatalogCard, CatalogFilter, StatsBanner
+│   │   ├── common/         # CommunityInvitationBanner & reusable CTAs
 │   │   ├── detail/         # TrackDetailView, Roadmap steps, FAQ accordions, Application modal
+│   │   ├── landing/        # LandingHero, TickerBar, Track cards, Format cards, Campus project
 │   │   ├── layout/         # Navbar, Footer, ReactQueryProvider
-│   │   └── ui/             # Reusable UI primitives (Badge, Skeleton, ErrorFallback, EmptyState, Pagination)
+│   │   └── ui/             # Reusable UI primitives (GDGLogo, Badge, Skeleton, ErrorFallback, EmptyState, Pagination)
 │   ├── hooks/
 │   │   ├── useData.ts      # React Query hooks for tracks, stats, journey, and unified catalog
 │   │   └── usePagination.ts# Custom client-side pagination hook with clamped pages & auto-reset
