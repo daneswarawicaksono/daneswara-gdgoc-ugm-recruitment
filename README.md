@@ -3,9 +3,8 @@
 > **Candidate Name:** Daneswara Ramadhana Rafif Wicaksono  
 > **Target Community:** Google Developer Groups on Campus (GDGoC) Universitas Gadjah Mada  
 > **Role:** Front-End Hacker Candidate (2026/2027 Recruitment)  
-> **Live Deployment (Vercel):** [https://gdgoc-ugm-recruitment-daneswara.vercel.app](https://gdgoc-ugm-recruitment-daneswara.vercel.app) *(Documented Placeholder)*  
-> **Video Walkthrough (Google Drive):** [https://drive.google.com/drive/folders/placeholder-walkthrough-daneswara](https://drive.google.com/drive/folders/placeholder-walkthrough-daneswara) *(Documented Placeholder)*  
-
+> **Live Deployment (Vercel):** https://daneswara-gdgoc-ugm-recruitment.vercel.app/
+> **Video Walkthrough (Google Drive):** https://drive.google.com/drive/folders/15xRvIKDviuI1ROnNabmGPjyItJRz56oS?usp=sharing
 ---
 
 ## 🚀 Project Overview
